@@ -221,7 +221,8 @@ nav2_util::CallbackReturn LdLidarComponent::on_configure(const lc::State & prev_
   getParameters();
 
   // ----> Initialize topics
-  mScanTopic = mTopicRoot + std::string("scan");
+  // mScanTopic = mTopicRoot + std::string("scan");
+  mScanTopic = std::string("scan");
   // <---- Initialize topics
 
   // ----> Initialize publisher
