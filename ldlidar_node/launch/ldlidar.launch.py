@@ -65,15 +65,26 @@ def generate_launch_description():
         urdf_file_name)
     with open(urdf, 'r') as infp:
         robot_desc = infp.read()
+    
+    # URDF path
+    # urdf_file_name = 'model_ldlidar.urdf'
+    # urdf = os.path.join(
+    #     get_package_share_directory('racoon_ros2_pkg'),
+    #     'urdf',
+    #     'racoon_simplified',
+    #     urdf_file_name)
+    # with open(urdf, 'r') as infp:
+    #     robot_desc = infp.read()
 
     # Robot State Publisher node
     rsp_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         name='ldlidar_state_publisher',
+        # name='robot_state_publisher',
         output='screen',
         parameters=[{'robot_description': robot_desc}],
-        arguments=[urdf]
+        arguments=[urdf],
     )
 
     # Define LaunchDescription variable

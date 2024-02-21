@@ -42,7 +42,7 @@ def generate_launch_description():
     rviz2_config = os.path.join(
         get_package_share_directory('ldlidar_node'),
         'config',
-        'ldlidar.rviz'
+        'ldlidar2.rviz'
     )
 
     # Lifecycle manager node

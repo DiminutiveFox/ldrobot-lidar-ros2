@@ -60,7 +60,7 @@ Visualization Manager:
         Depth: 1
         Durability Policy: Transient Local
         History Policy: Keep All
-        Reliability Policy: Best Effort
+        Reliability Policy: Reliable
         Value: /robot_description
       Enabled: true
       Links:
@@ -69,6 +69,44 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        motor_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        motor_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        caster_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         ldlidar_base:
           Alpha: 1
           Show Axes: false
@@ -91,9 +129,29 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_footprint:
+          Value: true
+        base_link:
+          Value: true
+        motor_left_link:
+          Value: true
+        motor_right_link:
+          Value: true
+        wheel_left_link:
+          Value: true
+        wheel_right_link:
+          Value: true
+        imu_link:
+          Value: true
+        caster_link:
+          Value: true
         ldlidar_base:
           Value: true
         ldlidar_link:
+          Value: true
+        map:
+          Value: true
+        odom:
           Value: true
       Marker Scale: 0.25
       Name: TF
@@ -101,9 +159,25 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        ldlidar_base:
-          ldlidar_link:
-            {}
+        map:
+          odom:
+            base_footprint:
+              base_link:
+                caster_link:
+                  {}
+                imu_link:
+                  {}
+                motor_link_left:
+                  wheel_link_left:
+                    {}
+                motor_link_right:
+                  wheel_link_right:
+                    {}
+                ldlidar_base:
+                  {}
+                ldlidar_link:
+                  {}
+
       Update Interval: 0
       Value: true
     - Alpha: 1
